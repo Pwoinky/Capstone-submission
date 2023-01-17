@@ -1,0 +1,15 @@
+[
+    {
+      "_id": "638f60cfaced2854a1361dbd",
+      "id": "1",
+      "name": "Mock Be Curious Book",
+      "image": "../../assets/images/beCuriousBook.png",
+      "price": 10
+    },
+    {
+      "id": "2",
+      "name": "Mock WYWM Book",
+      "image": "../../assets/images/beCuriousBook.png",
+      "price": 15
+    }
+  ]

@@ -1,0 +1,67 @@
+<nav>
+  <div class="nav-container noSelect">
+    <div class="row">
+      <div class="col-3 col-md-3 col-sm-3">
+        <div class="logo">
+          <img
+            class="Logo"
+            src="../../assets/images/WYWM_Logo_Full-White.png"
+            alt="WYWM LOGO"
+          />
+        </div>
+      </div>
+      <div class="col-9 col-md-9 col-sm-9 text-end">
+        <div
+          class="menu_icon"
+          [class.menu_icon_class]="menu_icon_variable"
+          (click)="openMenu()"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div
+          class="menu"
+          [class.menuClass]="menuVariable"
+          (click)="closeMenu()"
+          (mouseleave)="closeMenu()"
+        >
+          <ul>
+            <li class="breadcrumb-item" for="home" routerLink="/">Home</li>
+            <li class="breadcrumb-item" for="shirts" routerLink="/shirts">
+              Shirts
+            </li>
+            <li class="breadcrumb-item" for="books" routerLink="/books">
+              Books
+            </li>
+            <li class="breadcrumb-item" for="admin" routerLink="/Admin" *ngIf="admin == true">
+              Admin
+            </li>
+            <li class="breadcrumb-item" for="login" *ngIf="loggedIn == false" routerLink="/login">
+              Login
+            </li>
+            <li class="breadcrumb-item" for="login" *ngIf="loggedIn == true" (click)="logout()">
+              Logout
+            </li>
+            <li class="breadcrumb-item cart" for="cart" routerLink="/cart">
+              <i class="fa">&#xf07a;</i>
+              <span class="badge badge-warning" id="lblCartCount"></span
+              >Checkout
+            </li>
+
+            <li class="search">
+              <form>
+                <input
+                  type="text"
+                  class="form-control rounded"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

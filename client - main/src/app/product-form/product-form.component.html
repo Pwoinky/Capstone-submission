@@ -1,0 +1,52 @@
+<form class="employee-form" autocomplete="off" [formGroup]="productForm" (ngSubmit)="submitForm()">
+    <!-- Product ID -->
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" id="id" formControlName="id" placeholder="id" required>
+      <label for="id">Product ID</label>
+    </div>
+
+    <div *ngIf="id.invalid && (id.dirty || id.touched)" class="alert alert-danger">
+      <div *ngIf="id.errors?.['required']">
+        Product ID is required.
+      </div>
+    </div>
+
+    <!-- Product Name -->
+    <div class="form-floating mb-3">
+        <input class="form-control" type="text" id="name" formControlName="name" placeholder="Name" required>
+        <label for="name">Name</label>
+      </div>
+  
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <div *ngIf="name.errors?.['required']">
+          Name is required.
+        </div>
+      </div>
+
+    <!-- Product Image -->
+    <div class="form-floating mb-3">
+        <input class="form-control" type="text" id="image" formControlName="image" placeholder="image" required>
+        <label for="image">Image</label>
+      </div>
+  
+      <div *ngIf="image.invalid && (image.dirty || image.touched)" class="alert alert-danger">
+        <div *ngIf="image.errors?.['required']">
+          Product image is required.
+        </div>
+      </div>
+
+    <!-- Product Price -->
+    <div class="form-floating mb-3">
+        <input class="form-control" type="text" id="price" formControlName="price" placeholder="price" required>
+        <label for="image">Price</label>
+      </div>
+  
+      <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
+        <div *ngIf="price.errors?.['required']">
+          Product price is required.
+        </div>
+      </div>
+
+
+    <button class="btn btn-primary" type="submit" [disabled]="productForm.invalid" [routerLink]="['Admin']">Add</button>
+  </form>

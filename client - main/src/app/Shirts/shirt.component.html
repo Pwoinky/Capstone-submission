@@ -1,0 +1,30 @@
+<h1 class="text-center m-5 noSelect">Shirts</h1>
+
+<div class="container noSelect">
+  <div class="product-container d-flex flex-wrap text-center">
+    <div class="product-item" *ngFor="let product of products$ | async">
+      <div>
+        <img
+          class="product-image"
+          src="{{ product.image }}"
+          alt="{{ product.name }}"
+        />
+      </div>
+      <span>{{ product.name }}</span
+      ><br />
+      <span>{{ product.price | currency: "GBP":true }}</span
+      ><br />
+      <button class="button product-button" (click)="addToCart(product)">
+        <i class="add-to-cart fa-solid fa-cart-plus"></i
+        ><span> Add To Cart</span>
+      </button>
+    </div>
+  </div>
+  <div class="productOverlay noSelect justify" *ngIf="popup" (click)="popup = false">
+    <div class="popup">
+      <div class="content">
+        Added to Cart!
+      </div>
+    </div>
+  </div>
+</div>

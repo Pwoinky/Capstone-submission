@@ -1,0 +1,168 @@
+/* Global Styles */
+
+* {
+  font-family: "Roboto", Arial, sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: aliceblue;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+router-outlet + * {
+  padding: 0 16px;
+}
+
+/* Text */
+
+h1 {
+  font-size: 75px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 20px;
+  color: #000000;
+  font-weight: lighter;
+}
+
+p {
+  font-size: 14px;
+}
+
+/* Hyperlink */
+
+a {
+  cursor: pointer;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+/* img hover */
+
+img:hover {
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+  transform: scale(1.1);
+}
+
+/* Buttons */
+
+.button,
+.cart-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #164734;
+  color: white;
+  border: none;
+}
+
+.button:hover,
+button:hover {
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.button:disabled,
+button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.add-to-cart,
+.truck-img {
+  margin-right: 10px;
+}
+
+/* Fancy Button */
+
+.fancy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  color: #164734;
+  padding-right: 4px;
+}
+
+.fancy-button i.material-icons {
+  color: #164734;
+  padding-right: 4px;
+}
+
+/* Product Button */
+.product-button {
+  background-color: #164734;
+  color: #fdfdfd;
+  margin: 15px;
+}
+
+/* No Select Text */
+.noSelect {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.productOverlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 500ms;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Popup */
+
+.popup {
+  text-align: center;
+  margin: 150px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width:20%;
+  position: relative;
+  transition: all 2s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06d85f;
+  cursor: pointer;
+}
+.popup .content {
+  overflow: auto;
+}

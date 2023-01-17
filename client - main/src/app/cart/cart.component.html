@@ -1,0 +1,52 @@
+<div class="text-center m-5 noSelect" *ngIf="cartTotal == 0">
+  <h3>Your Cart is Empty</h3>
+  <button class="cart-button" routerLink="/">Home Page</button>
+</div>
+<h1 *ngIf="cartTotal > 0" class="text-center m-5 noSelect">Shopping Cart</h1>
+<div *ngIf="cartTotal > 0" class="cart-container noSelect">
+  <table class="table table-bordered table-hover">
+    <thead class="thead">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="cart-item" *ngFor="let product of products; let index = index">
+        <td>
+          <img
+            class="img-thumbnail .img-responsive"
+            src="{{ product.image }}"
+            style="height: 80px; width: 80px;"
+          />
+        </td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | currency: "GBP":true }}</td>
+        <td>
+          <button class="removeButton" (click)="removeItem(index)">Remove Item</button>
+        </td>
+      </tr>
+      <div>
+        <div class="item" >Items: {{ cartTotal }}</div>
+        <div class="tax" >Tax: {{ tax | currency: "GBP":true }} </div>
+        <div class="shipping" >Shipping: £20.00 </div>
+        <div class="total" >Total: {{ total | currency: "GBP":true }}</div>
+
+        <button (click)="onSubmit()" class="cart-button" type="submit">
+          <i class="truck-img fa-solid fa-truck"></i>Purchase
+        </button>
+      </div>
+    </tbody>
+  </table>
+</div>
+
+<div class="overlay noSelect" *ngIf="popup" (click)="popup = false">
+	<div class="popup">
+		<h2>Thank You!</h2>
+		<div class="content">
+		Your Order has been placed successfully!
+		</div>
+	</div>
+</div>

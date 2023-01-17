@@ -1,0 +1,52 @@
+* {
+  color: black;
+}
+
+.form_container {
+  margin-top: 20%;
+}
+
+
+.login {
+  margin-top: 10%;
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('../../assets/images/login.jpeg');
+  margin-top: 10%;
+  margin-bottom: 50%;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  background-color: #164734;
+  border-radius: 5px;
+  color: aliceblue;
+}
+
+.form-signin {
+  max-width: 330px;
+
+  padding: 15px;
+  margin: 0 auto;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width:999px) {
+  .form_container {
+    margin-top: 0;
+  }
+}

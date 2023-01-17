@@ -1,0 +1,151 @@
+<div class="text-center m-5 noSelect" *ngIf="admin == false">
+  <h3>Please Log in as an administrator to view this page</h3>
+  <button class="cart-button" routerLink="/login">Login Page</button>
+</div>
+<div *ngIf="admin == true">
+  <h1 class="text-center m-5 noSelect">Admin</h1>
+
+  <h2 class="shirtList text-center m-5">Shirt List</h2>
+
+  <table class="table table-striped table-bordered">
+    <thead class="noSelect">
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody class="noSelect">
+      <tr *ngFor="let product of products$ | async">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.image }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <button
+            class="addShirtBtn btn-primary me-1"
+            [routerLink]="['editShirt/', product._id]"
+          >
+            Edit
+          </button>
+          <button class="deleteShirtBtn btn-danger" (click)="shirtPopup = true">
+            Delete
+          </button>
+        </td>
+        <div class="warningOverlay noSelect" *ngIf="shirtPopup" (click)="shirtPopup = false">
+          <div class="popup">
+            <h2 class="warning">Warning!</h2>
+            <div>
+              Are you sure you want to delete "{{ product.name }}" this action
+              is unrecoverable?
+              <br />
+              <button
+                class="deleteShirtBtn btn-danger" id="shirtDelete"
+                (click)="deleteShirt(product._id || '')" 
+              >
+                Delete
+              </button>
+              <button
+                class="addShirtBtn btn-primary me-1"
+                (click)="shirtPopup = false"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="newShirtBtn btn-primary mt-3" [routerLink]="['newShirt']">
+    Add a New Shirt
+  </button>
+
+  <h2 class="bookList text-center m-5">Book List</h2>
+
+  <table class="table table-striped table-bordered">
+    <thead class="noSelect">
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody class="noSelect">
+      <tr *ngFor="let book of books$ | async">
+        <td>{{ book.id }}</td>
+        <td>{{ book.name }}</td>
+        <td>{{ book.image }}</td>
+        <td>{{ book.price }}</td>
+        <td>
+          <button
+            class="updateBookBtn btn-primary me-1"
+            [routerLink]="['editBook/', book._id]"
+          >
+            Edit
+          </button>
+          <button class="deleteBookBtn btn-danger" (click)="bookPopup = true">
+            Delete
+          </button>
+        </td>
+        <div
+          class="warningOverlay noSelect"
+          *ngIf="bookPopup"
+          (click)="bookPopup = false"
+        >
+          <div class="popup">
+            <h2 class="warning">Warning!</h2>
+            <div>
+              Are you sure you want to delete "{{ book.name }}" this action is
+              unrecoverable?
+              <br />
+              <button
+                class="deleteBookBtn btn-danger"
+                (click)="deleteBook(book._id || '')" id="bookDelete"
+              >
+                Delete
+              </button>
+              <button
+                class="addBookBtn btn-primary me-1"
+                (click)="bookPopup = false"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="newBookBtn btn-primary mt-3" [routerLink]="['newBook']">
+    Add a New Book
+  </button>
+
+  <h2 class="shirtList text-center m-5">User List</h2>
+
+  <table class="table table-striped table-bordered">
+    <thead class="noSelect">
+      <tr>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+
+    <tbody class="noSelect">
+      <tr *ngFor="let user of users$ | async">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

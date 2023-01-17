@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Mock Be Curious Shirt",
+    "image": "../../assets/images/beCuriousShirt.png",
+    "price": 50
+  },
+  {
+    "id": 2,
+    "name": "Mock Creator Shirt",
+    "image": "../../assets/images/creatorShirt.png",
+    "price": 35
+  },
+  {
+    "id": 3,
+    "name": "Mock Doer Shirt",
+    "image": "../../assets/images/doerShirt.png",
+    "price": 35
+  },
+  {
+    "id": 4,
+    "name": "Mock Translator Shirt",
+    "image": "../../assets/images/translatorShirt.png",
+    "price": 35
+  },
+  {
+    "id": 5,
+    "name": "Mock Pro Shirt",
+    "image": "../../assets/images/proShirt.png",
+    "price": 60
+  }
+]

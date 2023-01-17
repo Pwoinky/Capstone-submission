@@ -1,0 +1,16 @@
+nav {
+  padding: 5px 0;
+  background-color: #164734;
+  color: aliceblue;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 999px) {
+  nav {
+    position: fixed;
+    bottom: 0;
+  }
+}

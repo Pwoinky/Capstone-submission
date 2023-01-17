@@ -1,0 +1,58 @@
+.container {
+  text-align: center;
+}
+
+.grid-child {
+  border: solid;
+  border-width: 2px;
+  border-color: rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.grid-image {
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.home-button {
+  background-color: #164734;
+  color: #ffffff;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius:50px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+}
+.icon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
