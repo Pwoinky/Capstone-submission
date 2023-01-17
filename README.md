@@ -12,7 +12,7 @@ Navigate to `http://localhost:4200/`. The application will automatically reload 
 
 ## Running unit tests (Client side only)
 
-Run `npx cypress run` to execute the unit tests via cypress.
+Run `npx cypress run` in the integrated client terminal where you ran the npm isntaller to execute the unit tests via cypress.
 
 ## Further help
 
