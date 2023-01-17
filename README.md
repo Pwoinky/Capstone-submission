@@ -2,7 +2,9 @@
  
 # Client and Server NPM install
 
-User NPM install, if this fails try NPM install --legacy-peer-deps
+Open a integrated terminal in both the client and server side and run the following NPM install.
+
+If this fails try NPM install --legacy-peer-deps
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
 
